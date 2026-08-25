@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="鄭雲升｜OHGAO 創辦人，工業設計、產品開發與設計教育。">
+  <title>鄭雲升｜OHGAO 創辦人</title>
+  <style>
+    :root {
+      --ink: #10110f;
+      --paper: #f2f0e9;
+      --mist: #dcd9ce;
+      --accent: #d61f62;
+      --line: rgba(16, 17, 15, .18);
+      --display: "Arial Narrow", "Noto Sans TC", sans-serif;
+      --body: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); line-height: 1.7; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin: auto; }
+    .nav { border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; background: rgba(242,240,233,.9); backdrop-filter: blur(14px); }
+    .nav-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font: 900 23px/1 var(--display); letter-spacing: .07em; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 25px; font-size: 14px; }
+    .nav-links a { border-bottom: 1px solid transparent; }
+    .nav-links a:hover { border-color: var(--ink); }
+    .menu-button { display: none; padding: 7px 0; font: inherit; border: 0; background: transparent; color: var(--ink); }
+
+    .hero { min-height: 700px; display: grid; grid-template-columns: 1.1fr .9fr; border-bottom: 1px solid var(--line); }
+    .hero-copy { padding: clamp(80px, 11vw, 150px) 6vw 80px 0; display: flex; flex-direction: column; justify-content: center; }
+    .tag, .label { font-size: 12px; font-weight: 700; letter-spacing: .14em; }
+    .tag { color: var(--accent); margin-bottom: 24px; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { font: 900 clamp(56px, 8vw, 112px)/.89 var(--display); letter-spacing: -.07em; margin-bottom: 32px; }
+    h1 i { color: var(--accent); font-style: normal; }
+    .lead { max-width: 570px; font-size: 17px; color: #3e403b; }
+    .hero-mark { margin: 70px 0 70px 24px; background: var(--ink); color: var(--paper); position: relative; overflow: hidden; min-height: 500px; display: grid; place-items: center; }
+    .hero-mark::before, .hero-mark::after { content: ""; position: absolute; border: 1px solid rgba(242,240,233,.38); border-radius: 50%; }
+    .hero-mark::before { width: 82%; aspect-ratio: 1; }
+    .hero-mark::after { width: 55%; aspect-ratio: 1; }
+    .hero-mark strong { z-index: 1; font: 900 clamp(92px, 14vw, 178px)/1 var(--display); letter-spacing: -.12em; }
+    .hero-mark small { z-index: 1; position: absolute; bottom: 28px; left: 28px; font-size: 11px; letter-spacing: .13em; }
+    .arrow { margin-top: 38px; display: inline-flex; align-items: center; gap: 12px; font-weight: 700; font-size: 14px; }
+    .arrow::after { content: "↓"; font-size: 20px; color: var(--accent); }
+
+    section { padding: 120px 0; border-bottom: 1px solid var(--line); }
+    .section-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 8vw; }
+    .section-title h2 { font: 900 clamp(42px, 5vw, 70px)/.94 var(--display); letter-spacing: -.06em; margin: 12px 0 0; }
+    .about-copy { font-size: clamp(19px, 2vw, 26px); line-height: 1.62; letter-spacing: -.025em; }
+    .about-copy em { color: var(--accent); font-style: normal; }
+    .fact-row { margin-top: 52px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+    .fact { padding: 20px 18px 0 0; border-right: 1px solid var(--line); }
+    .fact + .fact { padding-left: 18px; }
+    .fact:last-child { border-right: 0; }
+    .fact b { display: block; font: 900 42px/1 var(--display); letter-spacing: -.05em; }
+    .fact span { display: block; margin-top: 8px; font-size: 12px; color: #555751; }
+
+    .experience { background: var(--ink); color: var(--paper); }
+    .experience .label { color: var(--accent); }
+    .experience .section-title h2 { color: var(--paper); }
+    .timeline { border-top: 1px solid rgba(242,240,233,.25); }
+    .role { display: grid; grid-template-columns: 100px 1fr; padding: 27px 0; border-bottom: 1px solid rgba(242,240,233,.25); gap: 18px; }
+    .role-code { color: var(--accent); font: 700 13px/1.3 var(--display); letter-spacing: .1em; padding-top: 6px; }
+    .role h3 { font-size: 20px; line-height: 1.35; margin: 0 0 4px; }
+    .role p { margin: 0; color: #bbbcb5; font-size: 14px; }
+
+    .awards { display: grid; grid-template-columns: repeat(2, 1fr); border-left: 1px solid var(--line); border-top: 1px solid var(--line); margin-top: 58px; }
+    .award { min-height: 200px; padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; justify-content: space-between; }
+    .award b { font: 900 clamp(38px, 5vw, 68px)/.9 var(--display); letter-spacing: -.07em; }
+    .award p { margin: 22px 0 0; font-size: 14px; color: #575851; }
+    .award .orange { color: var(--accent); }
+
+    .credentials { background: #dbd7cb; }
+    .credential-list { border-top: 1px solid var(--line); }
+    .credential { display: grid; grid-template-columns: 1fr auto; align-items: center; padding: 24px 0; border-bottom: 1px solid var(--line); gap: 24px; }
+    .credential h3 { margin: 0; font-size: 20px; }
+    .credential span { color: #555751; font-size: 13px; }
+    .credential b { font: 700 12px var(--display); letter-spacing: .12em; color: var(--accent); }
+
+    footer { background: var(--accent); color: #20110b; padding: 95px 0 32px; }
+    footer h2 { max-width: 880px; font: 900 clamp(50px, 8vw, 108px)/.9 var(--display); letter-spacing: -.07em; margin-bottom: 38px; }
+    .footer-row { display: flex; justify-content: space-between; gap: 24px; padding-top: 26px; border-top: 1px solid rgba(32,17,11,.35); font-size: 13px; }
+    .footer-row a { font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+
+    @media (max-width: 720px) {
+      .wrap { width: min(100% - 32px, 1160px); }
+      .nav-inner { min-height: 62px; }
+      .nav-links { display: none; position: absolute; top: 62px; left: 0; right: 0; padding: 18px 16px; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; gap: 14px; }
+      .nav-links.open { display: flex; }
+      .menu-button { display: block; }
+      .hero { display: block; min-height: 0; }
+      .hero-copy { padding: 88px 0 42px; }
+      .hero-mark { margin: 0 0 36px; min-height: 340px; }
+      section { padding: 78px 0; }
+      .section-grid { grid-template-columns: 1fr; gap: 40px; }
+      .fact-row { margin-top: 38px; }
+      .fact b { font-size: 32px; }
+      .awards { grid-template-columns: 1fr; margin-top: 42px; }
+      .award { min-height: 160px; }
+      .footer-row { display: block; }
+      .footer-row span { display: block; margin-top: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="brand">OH<span>GAO</span> / Y.S. CHENG</a>
+      <button class="menu-button" id="menu-button" aria-label="開啟選單" aria-expanded="false">MENU</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#about">關於我</a>
+        <a href="#experience">經歷</a>
+        <a href="#awards">獎項</a>
+        <a href="#credentials">專業認證</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="wrap hero">
+      <div class="hero-copy">
+        <p class="tag">INDUSTRIAL DESIGN · PRODUCT DEVELOPMENT</p>
+        <h1>凝視未知，<br>形塑<i>未來</i>。</h1>
+        <p class="lead">鄭雲升／OHGAO 創辦人。以十年工業設計實務，將產品策略、設計判斷與量產可行性，轉化為真正能被市場選擇的解決方案。</p>
+        <a class="arrow" href="#about">認識我的設計觀</a>
+      </div>
+      <div class="hero-mark" aria-label="OHGAO 品牌識別圖形">
+        <strong>O</strong>
+        <small>OHGAO / 01 — TAIWAN</small>
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="wrap section-grid">
+        <div class="section-title"><p class="label">01 / ABOUT</p><h2>不只是<br>把產品<br>變漂亮。</h2></div>
+        <div>
+          <p class="about-copy">我是鄭雲升，OHGAO 創辦人，擁有十年工業設計與產品開發經驗。我相信設計不只是外觀美學，更是<em>洞察問題、整合資源並創造商業價值</em>的能力。從市場定位、使用者需求、造型語言到製造可行性，我以完整的開發視角，協助品牌將模糊的想法轉化為具有辨識度且能真正落地的產品。</p>
+          <div class="fact-row">
+            <div class="fact"><b>10+</b><span>年設計與開發經驗</span></div>
+            <div class="fact"><b>17</b><span>項設計獎項肯定</span></div>
+            <div class="fact"><b>03</b><span>年連續台灣精品獎</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience" id="experience">
+      <div class="wrap section-grid">
+        <div class="section-title"><p class="label">02 / EXPERIENCE</p><h2>從概念到<br>量產，讓設計<br>成為答案。</h2></div>
+        <div class="timeline">
+          <article class="role"><div class="role-code">OHGAO</div><div><h3>創辦人</h3><p>以產品策略、工業設計與製造思維，協助品牌建立具競爭力的產品。</p></div></article>
+          <article class="role"><div class="role-code">JIE TO</div><div><h3>杰拓國際｜PM</h3><p>串連專案目標與開發節奏，推動產品從規劃走向成果。</p></div></article>
+          <article class="role"><div class="role-code">FUTURE LAB</div><div><h3>未來實驗室｜資深工業設計師</h3><p>以使用情境與市場差異化為核心，開發消費產品設計方案。</p></div></article>
+          <article class="role"><div class="role-code">WEI SHUN</div><div><h3>台灣維順｜工業設計師</h3><p>累積產品開發與工業設計實務，建立兼具美感與落地性的設計判斷。</p></div></article>
+          <article class="role"><div class="role-code">R2SPEEDTEK</div><div><h3>R2SPEEDTEK｜設計顧問</h3><p>以專業設計觀點協助產品方向聚焦與價值提升。</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards">
+      <div class="wrap">
+        <div class="section-title"><p class="label">03 / RECOGNITION</p><h2>讓設計，<br>被世界看見。</h2></div>
+        <div class="awards">
+          <article class="award"><b>Red<br>Dot</b><p>國際設計獎肯定</p></article>
+          <article class="award"><b>A’ Design<br><span class="orange">Bronze</span></b><p>A’ Design Award 銅獎</p></article>
+          <article class="award"><b>03<br>Years</b><p>連續三年獲得台灣精品獎</p></article>
+          <article class="award"><b class="orange">17</b><p>各類設計獎項累積 17 件，持續以作品驗證設計價值。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="credentials" id="credentials">
+      <div class="wrap section-grid">
+        <div class="section-title"><p class="label">04 / CREDENTIALS</p><h2>專業，是把<br>創意落地的<br>基本功。</h2></div>
+        <div class="credential-list">
+          <div class="credential"><div><h3>AutoCAD 國際認證</h3><span>以工程與製圖能力，支撐設計落地。</span></div><b>CAD</b></div>
+          <div class="credential"><div><h3>TQC 色彩認證</h3><span>以色彩策略與材質判斷，建立一致的產品體驗。</span></div><b>CMF</b></div>
+          <div class="credential"><div><h3>設計教育經驗</h3><span>曾於樹德科技大學生活產品設計系、新北高工機械製圖科授課。</span></div><b>EDU</b></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p class="label">OHGAO / INDUSTRIAL DESIGN</p>
+      <h2>讓每個想法，<br>有走向市場的力量。</h2>
+      <div class="footer-row"><a href="#top">回到頁首 ↑</a><span>© 2026 OHGAO · 鄭雲升</span></div>
+    </div>
+  </footer>
+  <script>
+    const menuButton = document.getElementById('menu-button');
+    const navLinks = document.getElementById('nav-links');
+    menuButton.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', open);
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }));
+  </script>
+</body>
+</html>
