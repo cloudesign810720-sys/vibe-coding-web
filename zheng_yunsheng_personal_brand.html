@@ -206,8 +206,9 @@
     @media (max-width: 720px) {
       .wrap { width: min(100% - 32px, 1160px); }
       .nav-inner { min-height: 62px; }
-      .nav-links { display: none; position: absolute; top: 62px; left: 0; right: 0; padding: 18px 16px; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; gap: 14px; }
+      .nav-links { display: none; position: absolute; top: 62px; left: 0; right: 0; padding: 14px 10px; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: row; justify-content: space-between; gap: clamp(3px, 1.2vw, 10px); }
       .nav-links.open { display: flex; }
+      .nav-links a { min-width: 0; font-size: clamp(9px, 2.7vw, 14px); white-space: nowrap; }
       .menu-button { display: block; }
       .hero { display: block; min-height: 0; }
       .hero-copy { padding: 72px 0 42px; }
