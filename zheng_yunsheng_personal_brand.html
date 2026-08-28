@@ -121,6 +121,7 @@
     .nav-links a { border-bottom: 1px solid transparent; }
     .nav-links a:hover { border-color: var(--ink); }
     .menu-button { display: none; padding: 7px 0; font: inherit; border: 0; background: transparent; color: var(--ink); }
+    .lang-button { padding: 7px 0; border: 0; background: transparent; color: var(--accent); font: 700 12px var(--display); letter-spacing: .08em; cursor: pointer; }
 
     .hero { min-height: 700px; display: grid; grid-template-columns: 1.1fr .9fr; border-bottom: 1px solid var(--line); }
     .hero-copy { padding: clamp(80px, 11vw, 150px) 6vw 80px 0; display: flex; flex-direction: column; justify-content: center; }
@@ -251,6 +252,7 @@
   <nav class="nav">
     <div class="wrap nav-inner">
       <a href="#top" class="brand">OH<span>GAO</span> / Z.Sean</a>
+      <button type="button" class="lang-button" id="lang-button" aria-label="切換英文" aria-pressed="false">EN</button>
       <button type="button" class="menu-button" id="menu-button" aria-label="開啟選單" aria-expanded="false" aria-controls="nav-links">MENU</button>
       <div class="nav-links" id="nav-links" aria-label="主要導覽">
         <a href="#about">關於我</a>
@@ -389,6 +391,77 @@
       navLinks.classList.remove('open');
       menuButton.setAttribute('aria-expanded', 'false');
     }));
+
+    const langButton = document.getElementById('lang-button');
+    const translations = {
+      '.nav-links a': ['About', 'Experience', 'Awards', 'Creative Work', 'Personality', 'Credentials', 'Portfolio', 'Contact'],
+      '.tag': 'INDUSTRIAL DESIGN · PRODUCT DEVELOPMENT',
+      'h1': 'Look into the unknown,<br>shape the <i>future</i>.',
+      '.lead': 'I am Z. Sean, founder of OHGAO. With ten years of industrial design practice, I turn product strategy, design judgment, and manufacturing feasibility into solutions the market can truly choose.',
+      '.arrow': 'Explore my design philosophy ↓',
+      '.section-title .label': ['01 / ABOUT', '02 / EXPERIENCE', '03 / RECOGNITION', '04 / CREATIVE PLAYGROUND', '05 / PERSONALITY', '06 / CREDENTIALS', '07 / FAQ'],
+      '.section-title h2': ['More than<br>making products<br>look good.', 'From concept to<br>production, make design<br>the answer.', 'Let design<br>be seen<br>by the world.', 'Personal<br>creative<br>playground.', 'Personality<br>traits.', 'Professionalism is<br>the foundation<br>of execution.', 'Answers to<br>the questions<br>you care about.'],
+      '.about-copy': [
+        '<strong>OHGAO helps brands turn vague ideas into distinctive, manufacturable products with commercial value.</strong> I am Z. Sean, founder of OHGAO, with ten years of experience in industrial design and product development. I believe design is more than visual aesthetics: it is the ability to <em>spot problems, connect resources, and create commercial value</em>.',
+        'Beyond product design, I also turn inspiration into songs. This is a sound collection made without a fixed framework. Put on your headphones and listen to another side of my creative expression.',
+        'Explore my personality traits to better understand how I think, work, and create.'
+      ],
+      '.service-heading': 'Core services',
+      '.service-list li': [
+        'Product strategy and market positioning: clarify user needs, competitive differences, and brand direction.',
+        'Industrial design and form development: establish product proportions, design language, and human experience.',
+        'CMF design: define color, material, and finish to create a consistent product experience.',
+        'DFM and production launch: check manufacturing feasibility from the design stage to reduce tooling and production risk.'
+      ],
+      '.fact span': ['Years of design and development experience', 'Design awards received', 'Consecutive years of Taiwan Excellence Awards'],
+      '.role-code': ['OHGAO', 'JTLEGEND', 'FUTURE LAB', 'HEARTWAY', 'MIGHTYSEVEN'],
+      '.role h3': ['Founder', 'Jie Tuo International | PM', 'Future Lab | Senior Industrial Designer', 'Taiwan Wei Shun | Industrial Designer', 'Medi Enterprise | Industrial Designer'],
+      '.role p': [
+        'Helping brands build competitive products through product strategy, industrial design, and manufacturing thinking.',
+        'Connecting project goals with development rhythm to move products from planning to results.',
+        'Developing consumer product design solutions centered on use scenarios and market differentiation.',
+        'Building practical judgment in product development and industrial design, balancing aesthetics with feasibility.',
+        'Focusing product direction and increasing value through a professional design perspective.'
+      ],
+      '.award p': ['International design award recognition', 'A\' Design Award Bronze', 'Taiwan Excellence Award for three consecutive years', '17 design awards accumulated, continuing to validate the value of design through work.'],
+      '.credential h3': ['AutoCAD International Certification', 'TQC Color Certification', 'Design education experience'],
+      '.credential span': ['Supporting design execution with engineering and drafting skills.', 'Building a consistent product experience through color strategy and material judgment.', 'Studied at the Department of Living Product Design at Shu-Te University and New Taipei Industrial Vocational High School.'],
+      '.faq-list summary': ['What industrial design services does OHGAO provide?', 'How does OHGAO help products move from concept to production?', 'Who leads OHGAO\'s design services?'],
+      '.faq-list p': [
+        'OHGAO provides product strategy and market positioning, industrial design and form development, CMF design, and DFM manufacturing design and production launch.',
+        'Through market analysis, 3D form development, human-factor validation, CMF proposals, DFM reviews, and prototype tooling, we integrate design judgment and manufacturing feasibility into one development process.',
+        'OHGAO was founded by Z. Sean, who has ten years of industrial design and product development experience and focuses on building distinctive, production-ready products for brands.'
+      ],
+      '.creative-link': ['Listen to my creative work ↗', 'View my personality traits ↗'],
+      'footer .label': 'OHGAO / INDUSTRIAL DESIGN',
+      'footer h2': 'Give every idea,<br>the power to reach the market.',
+      '.footer-row a': 'Book a design consultation ↗',
+      '.footer-row span': '© 2026 OHGAO · Z. Sean'
+    };
+
+    const originalContent = new Map();
+    Object.keys(translations).forEach(selector => {
+      document.querySelectorAll(selector).forEach(element => originalContent.set(element, element.innerHTML));
+    });
+
+    function setLanguage(language) {
+      Object.entries(translations).forEach(([selector, values]) => {
+        document.querySelectorAll(selector).forEach((element, index) => {
+          const value = Array.isArray(values) ? values[index] : values;
+          if (language === 'en' && value !== undefined) element.innerHTML = value;
+          if (language === 'zh') element.innerHTML = originalContent.get(element);
+        });
+      });
+      const isEnglish = language === 'en';
+      langButton.textContent = isEnglish ? '中' : 'EN';
+      langButton.setAttribute('aria-label', isEnglish ? '切換中文' : '切換英文');
+      langButton.setAttribute('aria-pressed', isEnglish);
+      document.documentElement.lang = isEnglish ? 'en' : 'zh-Hant';
+    }
+
+    langButton.addEventListener('click', () => {
+      setLanguage(document.documentElement.lang === 'en' ? 'zh' : 'en');
+    });
 
     const motion = gsap.matchMedia();
     motion.add('(prefers-reduced-motion: no-preference)', () => {
