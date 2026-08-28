@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="鄭雲升／cloud yun 的 Behance 作品集，收錄平面設計、工業設計與產品概念作品。">
+  <link rel="canonical" href="https://cloudesign810720-sys.github.io/vibe-coding-web/portfolio.html">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="作品集｜OHGAO · 鄭雲升">
+  <meta property="og:description" content="鄭雲升／cloud yun 的 Behance 作品集。">
+  <meta property="og:url" content="https://cloudesign810720-sys.github.io/vibe-coding-web/portfolio.html">
+  <title>作品集｜OHGAO · 鄭雲升</title>
+  <style>
+    :root { --ink:#101112; --graphite:#2d3032; --paper:#f3f0e8; --mist:#9ca0a0; --accent:#ad164d; --line:rgba(16,17,18,.16); --display:"Arial Narrow","Noto Sans TC",sans-serif; --body:"Noto Sans TC","Microsoft JhengHei",sans-serif; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--body); line-height:1.5; }
+    a { color:inherit; text-decoration:none; }
+    a:focus-visible, button:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
+    .wrap { width:min(1280px, calc(100% - 56px)); margin:auto; }
+    .nav { position:sticky; top:0; z-index:10; background:rgba(243,240,232,.94); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); }
+    .nav-inner { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { font:900 23px/1 var(--display); letter-spacing:.07em; }
+    .brand span, .nav-links a[aria-current="page"] { color:var(--accent); }
+    .nav-links { display:flex; gap:25px; font-size:14px; }
+    .nav-links a { border-bottom:1px solid transparent; }
+    .nav-links a:hover { border-color:var(--ink); }
+    .menu-button { display:none; padding:8px 0; border:0; background:transparent; color:var(--ink); font:inherit; }
+    .profile { display:grid; grid-template-columns:104px 1fr auto; align-items:center; gap:26px; padding:64px 0 48px; border-bottom:1px solid var(--line); }
+    .avatar { width:104px; aspect-ratio:1; border-radius:50%; object-fit:cover; background:var(--mist); }
+    .eyebrow { margin:0 0 8px; color:var(--accent); font-size:12px; font-weight:800; letter-spacing:.13em; }
+    h1, h2, p { margin-top:0; }
+    h1 { margin-bottom:8px; font:900 clamp(42px,6vw,76px)/.9 var(--display); letter-spacing:-.06em; }
+    .role, .summary { margin:0; color:var(--graphite); }
+    .summary { max-width:680px; margin-top:16px; font-size:15px; }
+    .source-link { display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:0 18px; border:1px solid var(--ink); font-size:14px; font-weight:800; white-space:nowrap; }
+    .source-link:hover { background:var(--ink); color:var(--paper); }
+    .portfolio { padding:48px 0 88px; }
+    .portfolio-header { display:flex; align-items:end; justify-content:space-between; gap:24px; margin-bottom:28px; }
+    .portfolio-header h2 { margin:0; font:900 clamp(30px,4vw,46px)/1 var(--display); letter-spacing:-.05em; }
+    .portfolio-header p { margin:0; color:var(--graphite); font-size:14px; }
+    .project-grid { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:34px 24px; }
+    .project-card { min-width:0; }
+    .project-cover { position:relative; display:block; aspect-ratio:1.28; overflow:hidden; background:var(--mist); }
+    .project-cover::after { content:"查看 Behance 專案 ↗"; position:absolute; inset:auto 0 0; padding:18px; color:var(--paper); background:linear-gradient(transparent, rgba(16,17,18,.88)); font-size:13px; font-weight:800; opacity:0; transform:translateY(8px); transition:.2s ease; }
+    .project-cover:hover::after, .project-cover:focus-visible::after { opacity:1; transform:translateY(0); }
+    .project-cover img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .35s ease; }
+    .project-cover:hover img { transform:scale(1.035); }
+    .project-title { display:inline-block; margin-top:12px; font-size:15px; font-weight:800; line-height:1.35; }
+    .project-title:hover { color:var(--accent); }
+    footer { padding:28px 0; border-top:1px solid var(--line); color:var(--graphite); font-size:13px; }
+    @media (max-width:820px) { .profile { grid-template-columns:88px 1fr; } .avatar { width:88px; } .source-link { grid-column:1 / -1; justify-self:start; } .project-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media (max-width:640px) { .wrap { width:calc(100% - 32px); } .nav-inner { min-height:62px; } .brand { font-size:18px; } .menu-button { display:block; min-width:56px; min-height:44px; } .nav-links { display:none; position:absolute; top:62px; inset-inline:0; padding:18px 16px; flex-direction:column; gap:14px; background:var(--paper); border-bottom:1px solid var(--line); } .nav-links.open { display:flex; } .profile { grid-template-columns:72px 1fr; gap:18px; padding:42px 0 34px; } .avatar { width:72px; } h1 { font-size:43px; } .summary { grid-column:1 / -1; margin-top:0; } .portfolio { padding-top:34px; } .portfolio-header { display:block; } .portfolio-header p { margin-top:10px; } .project-grid { grid-template-columns:1fr; gap:28px; } .project-cover::after { opacity:1; transform:none; } }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a href="zheng_yunsheng_personal_brand.html" class="brand">OH<span>GAO</span> / Y.S. CHENG</a>
+      <button type="button" class="menu-button" id="menu-button" aria-label="開啟選單" aria-expanded="false" aria-controls="nav-links">MENU</button>
+      <div class="nav-links" id="nav-links" aria-label="主要導覽">
+        <a href="zheng_yunsheng_personal_brand.html#about">關於我</a>
+        <a href="zheng_yunsheng_personal_brand.html#experience">經歷</a>
+        <a href="zheng_yunsheng_personal_brand.html#awards">獎項</a>
+        <a href="portfolio.html" aria-current="page">作品集</a>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <header class="wrap profile">
+      <img class="avatar" src="https://pps.services.adobe.com/api/profile/CB839A4E579036047F000101@AdobeID/image/75b02152-57a6-4de4-bf9d-d4fe43edba29/230" alt="cloud yun 個人頭像">
+      <div>
+        <p class="eyebrow">SELECTED WORKS / BEHANCE</p>
+        <h1>cloud yun<br>作品集</h1>
+        <p class="role">Industrial Design · Taipei City, Taiwan</p>
+        <p class="summary">收錄平面設計、工業設計、產品概念與日常創作。每件作品均連回原始 Behance 專案頁。</p>
+      </div>
+      <a class="source-link" href="https://www.behance.net/cloudesignef51" target="_blank" rel="noopener noreferrer">瀏覽 Behance ↗</a>
+    </header>
+    <section class="wrap portfolio" aria-labelledby="portfolio-title">
+      <div class="portfolio-header"><h2 id="portfolio-title">作品</h2><p>46 件公開專案 · 點擊圖片開啟原始作品</p></div>
+      <div class="project-grid">
+        <article class="project-card"><a class="project-cover" href="https://www.behance.net/gallery/254576157/EDM" target="_blank" rel="noopener noreferrer"><img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/8d71b2254576157.Y3JvcCw4ODcsNjkzLDAsMzQ0.png" alt="小林髮廊內部競賽EDM" loading="lazy"></a><a class="project-title" href="https://www.behance.net/gallery/254576157/EDM" target="_blank" rel="noopener noreferrer">小林髮廊內部競賽EDM</a></article>
+        <article class="project-card"><a class="project-cover" href="https://www.behance.net/gallery/254576015/OHGAO_LOGO-Design" target="_blank" rel="noopener noreferrer"><img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/fb879e254576015.Y3JvcCwxMjU0LDk4MCwwLDEzNg.png" alt="OHGAO_LOGO Design" loading="lazy"></a><a class="project-title" href="https://www.behance.net/gallery/254576015/OHGAO_LOGO-Design" target="_blank" rel="noopener noreferrer">OHGAO_LOGO Design</a></article>
+        <article class="project-card"><a class="project-cover" href="https://www.behance.net/gallery/254547789/THE-VISUALGRAPHICDESIGN" target="_blank" rel="noopener noreferrer"><img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/ca4faa254547789.Y3JvcCwyODM1LDIyMTcsMCwxNzI2.jpg" alt="THE VISUAL GRAPHIC DESIGN" loading="lazy"></a><a class="project-title" href="https://www.behance.net/gallery/254547789/THE-VISUALGRAPHICDESIGN" target="_blank" rel="noopener noreferrer">THE VISUAL | GRAPHIC DESIGN</a></article>
+        <article class="project-card"><a class="project-cover" href="https://www.behance.net/gallery/253903617/Zsean-_-ID-profolio-(2010-2022)" target="_blank" rel="noopener noreferrer"><img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/e6f059253903617.Y3JvcCwxMTE0LDg3MiwxMSw1Nw.png" alt="Z.sean ID portfolio 2010 - 2022" loading="lazy"></a><a class="project-title" href="https://www.behance.net/gallery/253903617/Zsean-_-ID-profolio-(2010-2022)" target="_blank" rel="noopener noreferrer">Z.sean _ ID profolio (2010 - 2022)</a></article>
+        <article class="project-card"><a class="project-cover" href="https://www.behance.net/gallery/253602653/-Shattered-Light" target="_blank" rel="noopener noreferrer"><img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/42f5e7253602653.Y3JvcCw3NjIsNTk2LDM4OCwyMTM.png" alt="碎光 Shattered Light" loading="lazy"></a><a class="project-title" href="https://www.behance.net/gallery/253602653/-Shattered-Light" target="_blank" rel="noopener noreferrer">碎光 Shattered Light</a></article>
+        <article class="project-card"><a class="project-cover" href="https://www.behance.net/gallery/253188221/Daily-Sketch" target="_blank" rel="noopener noreferrer"><img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/89e762253188221.Y3JvcCwxMjIwLDk1NCwzNDQsMzk.jpg" alt="Daily Sketch" loading="lazy"></a><a class="project-title" href="https://www.behance.net/gallery/253188221/Daily-Sketch" target="_blank" rel="noopener noreferrer">Daily Sketch</a></article>
+        <article class="project-card"><a class="project-cover" href="https://www.behance.net/gallery/253187873/Air-Purifier" target="_blank" rel="noopener noreferrer"><img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/fa924f253187873.Y3JvcCwxMzA5LDEwMjQsMTEzLDA.png" alt="Air Purifier" loading="lazy"></a><a class="project-title" href="https://www.behance.net/gallery/253187873/Air-Purifier" target="_blank" rel="noopener noreferrer">Air Purifier</a></article>
+        <article class="project-card"><a class="project-cover" href="https://www.behance.net/gallery/253187113/Water-Flosser-Cordless" target="_blank" rel="noopener noreferrer"><img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/4c2458253187113.Y3JvcCwxMzA5LDEwMjQsMTEzLDA.jpg" alt="Water Flosser Cordless" loading="lazy"></a><a class="project-title" href="https://www.behance.net/gallery/253187113/Water-Flosser-Cordless" target="_blank" rel="noopener noreferrer">Water Flosser Cordless</a></article>
+        <article class="project-card"><a class="project-cover" href="https://www.behance.net/gallery/253185443/Auto-Cat-Butler" target="_blank" rel="noopener noreferrer"><img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/dec578253185443.Y3JvcCwxMjA1LDk0Myw5Miww.jpg" alt="Auto Cat Butler" loading="lazy"></a><a class="project-title" href="https://www.behance.net/gallery/253185443/Auto-Cat-Butler" target="_blank" rel="noopener noreferrer">Auto Cat Butler</a></article>
+        <article class="project-card"><a class="project-cover" href="https://www.behance.net/gallery/253182919/Slim-Card-Charge" target="_blank" rel="noopener noreferrer"><img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/e985af253182919.Y3JvcCwxMjAzLDk0MSwxOTMsMA.png" alt="Slim Card Charge" loading="lazy"></a><a class="project-title" href="https://www.behance.net/gallery/253182919/Slim-Card-Charge" target="_blank" rel="noopener noreferrer">Slim Card Charge</a></article>
+        <article class="project-card"><a class="project-cover" href="https://www.behance.net/gallery/253182607/Speed-Core" target="_blank" rel="noopener noreferrer"><img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/c8160b253182607.Y3JvcCwxMjAzLDk0MSwyNjUsMA.png" alt="Speed Core" loading="lazy"></a><a class="project-title" href="https://www.behance.net/gallery/253182607/Speed-Core" target="_blank" rel="noopener noreferrer">Speed Core</a></article>
+        <article class="project-card"><a class="project-cover" href="https://www.behance.net/gallery/253181607/Electric-Callus-Shaver" target="_blank" rel="noopener noreferrer"><img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/77686c253181607.Y3JvcCwxMDA3LDc4OCw1Miww.png" alt="Electric Callus Shaver" loading="lazy"></a><a class="project-title" href="https://www.behance.net/gallery/253181607/Electric-Callus-Shaver" target="_blank" rel="noopener noreferrer">Electric Callus Shaver</a></article>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap">© 2026 OHGAO · 鄭雲升 · 作品圖片與連結來源：Behance</div></footer>
+  <script>
+    const menuButton = document.getElementById('menu-button');
+    const navLinks = document.getElementById('nav-links');
+    menuButton.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', open);
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }));
+ 
+    const extraProjects = [
+  {
+    "href": "https://www.behance.net/gallery/253180931/Treadmill",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/771125253180931.Y3JvcCwxMjAzLDk0MSw3Nyww.png",
+    "title": "Treadmill"
+  },
+  {
+    "href": "https://www.behance.net/gallery/253180465/Laser-Cap",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/0fb198253180465.Y3JvcCwyMzEwLDE4MDcsMTYzNSwzMDg.jpg",
+    "title": "Laser Cap"
+  },
+  {
+    "href": "https://www.behance.net/gallery/253180165/Aura-_-Makeup-brush-can",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/033f31253180165.Y3JvcCwxMjA4LDk0NSwyODQsMA.png",
+    "title": "Aura _ Makeup-brush-can"
+  },
+  {
+    "href": "https://www.behance.net/gallery/253179853/S38-Scooter",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/074a17253179853.Y3JvcCwxMDk0LDg1Niw1MjAsNDM.png",
+    "title": "S38 - Scooter"
+  },
+  {
+    "href": "https://www.behance.net/gallery/253179533/P36-Wheel-chair",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/80126c253179533.Y3JvcCwxMjAzLDk0MSwyNzMsMA.png",
+    "title": "P36-Wheel chair"
+  },
+  {
+    "href": "https://www.behance.net/gallery/253179159/S30-Scooter",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/bbec8e253179159.Y3JvcCwxMjAzLDk0MSwyMzUsMA.png",
+    "title": "S30-Scooter"
+  },
+  {
+    "href": "https://www.behance.net/gallery/253178935/S29-Scooter",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/df749b253178935.Y3JvcCwxMDU2LDgyNiw0OTYsMzQ.png",
+    "title": "S29 - Scooter"
+  },
+  {
+    "href": "https://www.behance.net/gallery/253137407/DRG-30-Concept",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/bbff67253137407.Y3JvcCwyMTU4LDE2ODgsNDIyLDA.jpg",
+    "title": "DRG 3.0 - Concept"
+  },
+  {
+    "href": "https://www.behance.net/gallery/155870033/S37-Mobility-Scooter",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/404/92db54155870033.Y3JvcCw4MDEsNjI3LDIwOCw5.png",
+    "title": "S37-Mobility Scooter"
+  },
+  {
+    "href": "https://www.behance.net/gallery/155869869/S35-mobility-scooter",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/d7e055155869869.Y3JvcCwxMDc1LDg0MSwyOTgsNTA.png",
+    "title": "S35-mobility scooter"
+  },
+  {
+    "href": "https://www.behance.net/gallery/125546183/Mobility-Scooter-S21F",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/fd4dea125546183.Y3JvcCwxMjAxLDk0MCwyMzUsMA.png",
+    "title": "Mobility Scooter -S21F"
+  },
+  {
+    "href": "https://www.behance.net/gallery/128103127/Blaze-Blocker",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/f2c3ac128103127.Y3JvcCw5MTMsNzE0LDQwNyw2NQ.png",
+    "title": "Blaze Blocker"
+  },
+  {
+    "href": "https://www.behance.net/gallery/126204071/Ginseng-sculpture",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/f9ded1126204071.Y3JvcCwxNjAyLDEyNTMsMCwyMzA.jpg",
+    "title": "Ginseng sculpture"
+  },
+  {
+    "href": "https://www.behance.net/gallery/105689181/NC-4612-1-2-Air-Impact-Wrench",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/348db8105689181.Y3JvcCwxMzQ3LDEwNTQsNzMsMA.png",
+    "title": "NC-4612 1 / 2\" Air Impact Wrench"
+  },
+  {
+    "href": "https://www.behance.net/gallery/105244663/Digital-Assistant",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/63160a105244663.Y3JvcCwxMjAzLDk0MSwyMzUsMA.png",
+    "title": "Digital Assistant"
+  },
+  {
+    "href": "https://www.behance.net/gallery/75270081/3D-Practices",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/404/8ee02675270081.5c486eda248a8.jpg",
+    "title": "3D - Practices"
+  },
+  {
+    "href": "https://www.behance.net/gallery/75268687/CG-Rendering-Practices",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/71c89875268687.Y3JvcCwxMjA1LDk0MiwxNDksNjI.jpg",
+    "title": "CG - Rendering - Practices"
+  },
+  {
+    "href": "https://www.behance.net/gallery/75236169/LC500-Body-kit",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/8b849875236169.Y3JvcCwxMjAzLDk0MSwyMzUsMA.png",
+    "title": "LC500 Body kit"
+  },
+  {
+    "href": "https://www.behance.net/gallery/75234397/NC-4130-Air-mini-Pin-clutch-impact-wrench",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/b2693675234397.Y3JvcCwxMDI5LDgwNSwyMzQsMTIy.png",
+    "title": "NC-4130 Air mini Pin clutch impact wrench"
+  },
+  {
+    "href": "https://www.behance.net/gallery/75234063/QE-1162-Air-Drill",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/f3c44575234063.Y3JvcCwxMzQ3LDEwNTQsNzMsMA.png",
+    "title": "QE-1162 Air Drill"
+  },
+  {
+    "href": "https://www.behance.net/gallery/75233543/NC-8343-8-1-Drive-Impact-Wrench",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/1e07f875233543.Y3JvcCwxMzg4LDEwODYsMzAsMA.png",
+    "title": "NC-8343-8 1\" Drive Impact Wrench"
+  },
+  {
+    "href": "https://www.behance.net/gallery/75268039/Sketch-Practices",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/d9d9cb75268039.Y3JvcCw4MzIsNjUxLDUwMiw0MTY.jpg",
+    "title": "Sketch - Practices"
+  },
+  {
+    "href": "https://www.behance.net/gallery/75233089/NC-4650-Mini-TypeJumbo-Hammer",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/b6e93575233089.Y3JvcCwxMjM3LDk2OCwxMDQsNTg.png",
+    "title": "NC- 4650 Mini Type Jumbo Hammer"
+  },
+  {
+    "href": "https://www.behance.net/gallery/75231871/Air-Impact-Wrench-12-TwinHammer",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/85129f75231871.Y3JvcCwxMjg2LDEwMDYsMTM2LDA.png",
+    "title": "Air Impact Wrench - 1/2 Twin Hammer"
+  },
+  {
+    "href": "https://www.behance.net/gallery/75229181/Shower-Filter",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/8c967675229181.Y3JvcCwxMDUwLDgyMiwxMTQsMA.jpg",
+    "title": "Shower Filter"
+  },
+  {
+    "href": "https://www.behance.net/gallery/75227363/UV-manicure-light",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/f9462275227363.Y3JvcCw4MjUsNjQ1LDMwOCwxNTM.png",
+    "title": "UV manicure light"
+  },
+  {
+    "href": "https://www.behance.net/gallery/75226793/Hand-Tool-Wrench",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/acac9c75226793.Y3JvcCwyMDY1LDE2MTUsNTMxLDcwMA.jpg",
+    "title": "Hand Tool - Wrench"
+  },
+  {
+    "href": "https://www.behance.net/gallery/75226393/Connect-Baby-stroller-Elderly-wheelchair",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/e02a4e75226393.Y3JvcCw5OTksNzgyLDE5Nyww.jpg",
+    "title": "Connect Baby stroller+ Elderly wheelchair"
+  },
+  {
+    "href": "https://www.behance.net/gallery/75225365/Towel-Dewatering",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/4b462f75225365.Y3JvcCw0MTY5LDMyNjEsMCwyNjg.jpg",
+    "title": "Towel Dewatering"
+  },
+  {
+    "href": "https://www.behance.net/gallery/75225063/4-Share",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/eb511275225063.Y3JvcCwxMzQ4LDEwNTUsNiww.png",
+    "title": "4-Share"
+  },
+  {
+    "href": "https://www.behance.net/gallery/75224355/Pull-Back",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/afcd0e75224355.Y3JvcCwxMDMxLDgwNywwLDg5.png",
+    "title": "Pull Back"
+  },
+  {
+    "href": "https://www.behance.net/gallery/75224215/Onroad-x-Unload",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/f17e2275224215.Y3JvcCwxMzA5LDEwMjQsMTEzLDA.png",
+    "title": "Onroad x Unload"
+  },
+  {
+    "href": "https://www.behance.net/gallery/75223885/One-hand_contact",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/f34a4975223885.Y3JvcCw5NjMsNzUzLDQyMiwyNjc.png",
+    "title": "One-hand_contact"
+  },
+  {
+    "href": "https://www.behance.net/gallery/75221365/Chromatic-Sweep",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/808/2a8f2f75221365.Y3JvcCwxMDY0LDgzMiwyNzYsNjg.png",
+    "title": "Chromatic Sweep"
+  }
+];
+    const projectGrid = document.querySelector('.project-grid');
+    extraProjects.forEach(project => {
+      const card = document.createElement('article');
+      const cover = document.createElement('a');
+      const image = document.createElement('img');
+      const title = document.createElement('a');
+      card.className = 'project-card';
+      cover.className = 'project-cover';
+      cover.href = project.href;
+      cover.target = '_blank';
+      cover.rel = 'noopener noreferrer';
+      image.src = project.image;
+      image.alt = project.title;
+      image.loading = 'lazy';
+      title.className = 'project-title';
+      title.href = project.href;
+      title.target = '_blank';
+      title.rel = 'noopener noreferrer';
+      title.textContent = project.title;
+      cover.append(image);
+      card.append(cover, title);
+      projectGrid.append(card);
+    });
+  </script>
+</body>
+</html>
